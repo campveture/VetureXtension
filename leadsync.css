@@ -1,0 +1,122 @@
+/* LeadSync Specific CSS */
+.extension-popup {
+  background: var(--color-deep);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+.popup-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popup-logo {
+  color: var(--accent-cyan);
+}
+
+.popup-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.popup-body {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.popup-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.popup-btn {
+  background: var(--text-primary);
+  color: var(--color-deep);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.popup-btn:hover {
+  background: var(--accent-cyan);
+}
+
+.progress-container {
+  height: 4px;
+  background: var(--border-glass);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 65%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
+.console-log {
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.console-log span.success {
+  color: var(--accent-cyan);
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  border-left: 2px solid var(--border-glass);
+  padding-left: 1.5rem;
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
