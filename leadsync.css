@@ -3,7 +3,8 @@
   background: var(--color-deep);
   border: 1px solid var(--border-glass);
   border-radius: 12px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   margin: 0 auto;
   box-shadow: 0 30px 60px rgba(0,0,0,0.6);
   font-family: var(--font-body);
@@ -119,4 +120,14 @@
 .step-card p {
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive LeadSync
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .step-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
