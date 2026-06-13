@@ -205,47 +205,88 @@ h1, h2, h3 {
 }
 
 /* --------------------------------------------------------------------------
-   Trust Banner
+   Infinite Trust Marquee
    -------------------------------------------------------------------------- */
 .trust-banner {
-  max-width: 1000px;
-  margin: 0 auto 6rem auto;
+  width: 100%;
+  padding: 4rem 0 5rem 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid var(--border-glass);
+  background: var(--bg-surface);
+  margin-bottom: 4rem;
+}
+
+.trust-info {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
   padding: 0 5%;
 }
 
-.trust-text {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
+.trust-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.trust-logos {
+.trust-info p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.marquee-wrapper {
+  position: relative;
   display: flex;
-  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  /* Fades the edges into the background */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 4rem;
+  justify-content: space-around;
+  gap: 6rem;
+  min-width: 100%;
+  animation: scrollMarquee 30s linear infinite;
+  padding-left: 6rem;
+}
+
+.marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.trust-logo {
+  display: flex;
+  align-items: center;
   color: var(--text-secondary);
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
+  opacity: 0.3;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: crosshair;
 }
 
-.trust-logos:hover {
-  opacity: 0.8;
-}
-
-.trust-logos svg, .trust-logos span {
+.trust-logo svg {
   filter: grayscale(100%);
-  transition: all 0.3s ease;
+  transition: filter 0.4s ease;
 }
 
-.trust-logos svg:hover, .trust-logos span:hover {
-  filter: grayscale(0%);
+.trust-logo:hover {
+  opacity: 1;
   color: var(--text-primary);
+  transform: scale(1.15) translateY(-5px);
+  filter: drop-shadow(0 15px 25px var(--accent-cyan-glow));
+}
+
+.trust-logo:hover svg {
+  filter: grayscale(0%);
 }
 
 /* --------------------------------------------------------------------------
