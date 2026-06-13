@@ -205,6 +205,50 @@ h1, h2, h3 {
 }
 
 /* --------------------------------------------------------------------------
+   Trust Banner
+   -------------------------------------------------------------------------- */
+.trust-banner {
+  max-width: 1000px;
+  margin: 0 auto 6rem auto;
+  text-align: center;
+  padding: 0 5%;
+}
+
+.trust-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.trust-logos:hover {
+  opacity: 0.8;
+}
+
+.trust-logos svg, .trust-logos span {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.trust-logos svg:hover, .trust-logos span:hover {
+  filter: grayscale(0%);
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
    How It Works (Bento Grid)
    -------------------------------------------------------------------------- */
 .how-it-works, .products {
